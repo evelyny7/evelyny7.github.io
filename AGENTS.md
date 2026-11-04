@@ -38,7 +38,7 @@ Rules Evelyn wrote herself are listed first in each section and always win over 
 - Plain HTML and CSS, clean and minimal. Minimal vanilla JavaScript only where it clearly helps (for example highlighting the current section in the nav). No build step, no frameworks, no external dependencies. Everything must work when `index.html` is opened directly from disk and when served by GitHub Pages.
 - Portfolio is a gallery page that links to each project. Each project gets its own page or external link; the gallery shows a tile per project.
 - Tone: professional, concise, confident. No exclamation marks, no emoji, no marketing hype. Bullet points mirror the CV's wording.
-- Colors: Columbia blue palette. Light Columbia Blue `#B9D9EB` for accents and surfaces, dark Columbia blue `#1D4F91` for headings and primary accents, mid blue `#6CACE4` for highlights, white and soft grays for backgrounds.
+- Colors: Columbia blue palette. Light Columbia Blue `#B9D9EB` for accents and surfaces, dark Columbia blue `#1D4F91` for headings and primary accents, mid blue `#6CACE4` for highlights, white backgrounds (Evelyn asked for white, not Columbia blue, as the page background on 2026-11-04).
 - Navigation: one streamlined top bar with anchor links to each section. No dropdowns, no hamburger menus with hidden items.
 - Layout: single-page home, responsive, readable at phone width with a 16px side gutter and no horizontal scroll. Use tiles or cards to make sections scannable.
 - Accessibility: semantic headings in order, sufficient color contrast, alt text on images, keyboard-reachable links, visible focus states, respect `prefers-reduced-motion`.
