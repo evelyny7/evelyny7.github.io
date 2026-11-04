@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evelyn Yeung</title>
+<meta name="description" content="Evelyn Yeung, strategy and operations professional, MBA (Strategy) at Columbia Business School.">
+<style>
+  :root{
+    --columbia:#B9D9EB;       /* Columbia Blue */
+    --columbia-mid:#6CACE4;
+    --columbia-dark:#1D4F91;
+    --columbia-deep:#0F3463;
+    --ink:#1B2430;
+    --muted:#5B6878;
+    --line:#D8E6F1;
+    --bg:#F5F9FC;
+    --surface:#FFFFFF;
+    --tint:#EAF3FA;
+    --radius:14px;
+    --shadow:0 1px 2px rgba(15,52,99,.06),0 8px 24px rgba(15,52,99,.07);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:76px}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--columbia-dark)}
+  a:focus-visible{outline:3px solid var(--columbia-mid);outline-offset:2px;border-radius:4px}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+
+  /* Navigation */
+  .nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:60px}
+  .brand{font-weight:700;color:var(--columbia-deep);text-decoration:none;white-space:nowrap}
+  .links{display:flex;gap:4px;margin:0;padding:0;list-style:none;overflow-x:auto;scrollbar-width:none}
+  .links::-webkit-scrollbar{display:none}
+  .links a{display:block;padding:8px 12px;border-radius:999px;color:var(--muted);text-decoration:none;font-size:14.5px;font-weight:500;white-space:nowrap}
+  .links a:hover{background:var(--tint);color:var(--columbia-dark)}
+  .links a.active{background:var(--columbia);color:var(--columbia-deep)}
+  .social{display:flex;gap:6px}
+  .social a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);color:var(--columbia-dark);background:var(--surface)}
+  .social a:hover{background:var(--tint);border-color:var(--columbia-mid)}
+  .social svg{width:18px;height:18px;fill:currentColor}
+
+  /* Hero */
+  .hero{background:linear-gradient(180deg,var(--columbia) 0%,#D7E9F4 60%,var(--bg) 100%);padding:48px 0 36px}
+  .hero .wrap{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+  .photo{width:148px;height:148px;border-radius:50%;object-fit:cover;border:5px solid #fff;box-shadow:var(--shadow)}
+  .hero h1{margin:0 0 6px;font-size:clamp(28px,4vw,40px);line-height:1.15;color:var(--columbia-deep);letter-spacing:-.3px}
+  .tagline{margin:0 0 14px;color:var(--columbia-dark);font-weight:600;font-size:17px}
+  .summary{margin:0 0 18px;max-width:72ch}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:14.5px;color:var(--muted);margin:0 0 18px;padding:0;list-style:none}
+  .meta li{display:inline-flex;align-items:center;gap:6px}
+  .meta svg{width:15px;height:15px;fill:var(--columbia-dark)}
+  .meta a{text-decoration:none;color:var(--columbia-dark);font-weight:500}
+  .meta a:hover{text-decoration:underline}
+  .actions{display:flex;flex-wrap:wrap;gap:10px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:600;font-size:14.5px;border:1.5px solid var(--columbia-dark);color:var(--columbia-dark);background:transparent}
+  .btn.primary{background:var(--columbia-dark);color:#fff}
+  .btn:hover{filter:brightness(1.08)}
+  .btn svg{width:16px;height:16px;fill:currentColor}
+
+  /* Sections */
+  section{padding:40px 0}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin:0 0 20px}
+  .sec-head h2{margin:0;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--columbia-dark);font-weight:700}
+  .sec-head::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  .grid{display:grid;gap:16px}
+  .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;box-shadow:var(--shadow);border-top:4px solid var(--columbia)}
+  .card.accent{border-top-color:var(--columbia-dark)}
+  .card.span{grid-column:1 / -1}
+  .card-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:4px}
+  .card-head > div:first-child{flex:1 1 220px;min-width:0}
+  .card-head > .when{flex:0 0 auto}
+  .card h3{margin:0;font-size:18px;color:var(--columbia-deep)}
+  .org-note{color:var(--muted);font-weight:400;font-size:15px}
+  .role{margin:2px 0 0;font-weight:600}
+  .when{text-align:right;color:var(--muted);font-size:14px;white-space:nowrap}
+  .when strong{display:block;color:var(--columbia-dark);font-weight:600}
+  .card ul{margin:12px 0 0;padding-left:20px}
+  .card li{margin:7px 0}
+  .card li::marker{color:var(--columbia-mid)}
+
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0;padding:0;list-style:none}
+  .chips li{background:var(--tint);border:1px solid var(--line);color:var(--columbia-deep);padding:6px 12px;border-radius:999px;font-size:14px;font-weight:500}
+  .kv{margin:0}
+  .kv dt{font-weight:700;color:var(--columbia-dark);margin-top:12px;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+  .kv dt:first-child{margin-top:0}
+  .kv dd{margin:4px 0 0}
+
+  footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  @media (max-width:720px){
+    .hero .wrap{grid-template-columns:1fr}
+    .photo{width:120px;height:120px}
+    .grid.two{grid-template-columns:1fr}
+    .when{text-align:left;white-space:normal}
+    .brand{font-size:15px}
+    .social{display:none}
+  }
+  @media print{
+    .nav,.actions,.social{display:none}
+    .hero{background:none;padding:0 0 16px}
+    .card{box-shadow:none;break-inside:avoid}
+    body{background:#fff}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Evelyn Yeung</a>
+    <nav aria-label="Sections">
+      <ul class="links">
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#extracurricular">Extracurricular</a></li>
+        <li><a href="#additional">More</a></li>
+      </ul>
+    </nav>
+    <div class="social">
+      <a href="https://www.linkedin.com/in/evelyn1119/" target="_blank" rel="noopener" aria-label="LinkedIn profile" title="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+      <a href="https://github.com/evelyny7" target="_blank" rel="noopener" aria-label="GitHub profile" title="GitHub">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="name">
+    <div class="wrap">
+      <img class="photo" src="headshot.png" alt="Portrait of Evelyn Yeung" width="148" height="148">
+      <div>
+        <h1 id="name">Evelyn Yeung</h1>
+        <p class="tagline">Strategy &amp; Operations · MBA (Strategy), Columbia Business School</p>
+        <p class="summary">Strategy &amp; operations professional with 6+ years across strategy consulting, high-growth startups, and enterprise product, from executive-backed growth strategy to 0→1 operational execution. Turned complex datasets into actionable plans (SQL, Tableau) and led cross-functional teams to increase adoption and revenue. MBA (Strategy), Columbia Business School.</p>
+        <ul class="meta">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>New York, NY</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:EYeung27@gsb.columbia.edu">EYeung27@gsb.columbia.edu</a></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5.5 3.4 10.7 8 12 4.6-1.3 8-6.5 8-12V5l-8-3zm-1 14-4-4 1.4-1.4L11 13.2l5.6-5.6L18 9l-7 7z"/></svg>US Permanent Resident</li>
+        </ul>
+        <div class="actions">
+          <a class="btn primary" href="https://www.linkedin.com/in/evelyn1119/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn
+          </a>
+          <a class="btn" href="https://github.com/evelyny7" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg>GitHub
+          </a>
+          <a class="btn" href="mailto:EYeung27@gsb.columbia.edu">Email</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" aria-labelledby="experience-h">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="experience-h">Professional Experience</h2></div>
+      <div class="grid">
+
+        <article class="card accent">
+          <div class="card-head">
+            <div>
+              <h3>SomaStacks <span class="org-note">· seed-stage AI robotics startup backed by Base10 Partners; focused on dexterity training</span></h3>
+              <p class="role">Strategy &amp; Operations MBA Intern</p>
+            </div>
+            <div class="when"><strong>Jun 2026 – Aug 2026</strong>Menlo Park, CA</div>
+          </div>
+          <ul>
+            <li>Drove FY27 enterprise GTM pivot from robotics-native startups ($1-3M contracts) to enterprise autonomy programs ($10M+), securing CEO buy-in to shift ~35% of sales capacity toward a $50M+ pipeline, via pipeline &amp; win/loss analysis across segments</li>
+            <li>Unblocked $3M in stalled enterprise deals &amp; built a compliance playbook from scratch; diagnosed a missing security certification as the operational bottleneck with cross-functional partners, driving SOC 2 Type I audit-readiness in 2 months (78+ controls)</li>
+            <li>Sized the market at a ~$20B TAM (32% CAGR) with $6M FY27 addressable revenue through a 3-scenario model built from competitive intel with 2 analysts, securing C-suite meetings at 5 target accounts ($50M+ pipeline), including Meta's CTO</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <div>
+              <h3>Bloomberg L.P.</h3>
+              <p class="role">Audience Manager, Pre-MBA, Product Strategy &amp; Operations</p>
+            </div>
+            <div class="when"><strong>Jan 2025 – Jul 2025</strong>Hong Kong SAR</div>
+          </div>
+          <ul>
+            <li>Identified a $10M+ cross-sell opportunity by analyzing adoption across 20+ engagement programs; led a 5-person Sales, Product, and Marketing group to convert findings into an executable plan and presented it to the global head</li>
+            <li>Directed regional rollout strategy for Bloomberg Terminal AI features across C-suite and fixed-income segments; organized 14+ firm-wide new product demos to lift adoption 15% QoQ across a 2,000+ enterprise client base</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <div>
+              <h3>Prestique, Ltd. <span class="org-note">· luxury brand strategy consultancy; clients incl. LVMH, Richemont</span></h3>
+              <p class="role">Strategy &amp; Marketing Lead</p>
+            </div>
+            <div class="when"><strong>Apr 2022 – Dec 2024</strong>Hong Kong SAR</div>
+          </div>
+          <ul>
+            <li>Led go-to-market for 10 brand launches (incl. Richemont, LVMH, Shiseido) through persona building and product positioning, delivering 26% of the firm's annual target in the first 2 months, ~1.5x ahead of pace</li>
+            <li>Diagnosed shifting Gen Z and Gen X purchase behavior in transaction data &amp; recommended an ingredient-driven messaging over formulation; curated an executive report that shifted marketing to ingredient-led messaging, credited with +$1M in annual revenue</li>
+            <li>Managed a 4-person analyst team and owned 3 client accounts, growing retained revenue 35% in 6 months</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <div>
+              <h3>J.P. Morgan</h3>
+              <p class="role">Product Associate</p>
+            </div>
+            <div class="when"><strong>Sep 2020 – Jul 2021</strong>Hong Kong SAR</div>
+          </div>
+          <ul>
+            <li>Built data-driven investment recommendations by analyzing 25+ stock pitches across Shanghai-Shenzhen Stock Connect client portfolios, lifting platform adoption 39%</li>
+            <li>Supported a $2.6M multi-asset book across global index equities, convertible bonds, and swaps; built a free-cash-flow-yield screening framework that limited downside capture to 68%</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <div>
+              <h3>True Floors West <span class="org-note">· B2B wholesale flooring startup</span></h3>
+              <p class="role">Market Research Associate</p>
+            </div>
+            <div class="when"><strong>Jan 2018 – Jul 2020</strong>Los Angeles, CA</div>
+          </div>
+          <ul>
+            <li>Identified a positioning gap in ESG-compliant materials through competitive analysis of 6 suppliers, informing a repositioning that lifted market share ~20% and 11% margin improvement</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="education" aria-labelledby="education-h">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="education-h">Education</h2></div>
+      <div class="grid two">
+
+        <article class="card accent">
+          <div class="card-head">
+            <div>
+              <h3>Columbia Business School</h3>
+              <p class="role">MBA, Strategy · GMAT 770/800 (99th percentile)</p>
+            </div>
+            <div class="when"><strong>May 2027</strong>New York, NY</div>
+          </div>
+          <ul>
+            <li>Honors: Dean's List (2026); recipient of 3 MBA scholarships (O'Neill Petals, Madam Wun Tsun Tam, Chazen Travel)</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <div>
+              <h3>University of California, Berkeley</h3>
+              <p class="role">BA, Economics · GPA 3.7/4.0</p>
+            </div>
+            <div class="when"><strong>May 2017</strong>Berkeley, CA</div>
+          </div>
+          <ul>
+            <li>National Collegiate Scholars Honor Society Leadership Award (1 of 1,000+ applicants); full-ride UCEAP scholar</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="extracurricular" aria-labelledby="extracurricular-h">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="extracurricular-h">Extracurricular</h2></div>
+      <div class="grid two">
+
+        <article class="card">
+          <div class="card-head">
+            <div>
+              <h3>Greater China Society</h3>
+              <p class="role">AVP</p>
+            </div>
+            <div class="when">New York, NY</div>
+          </div>
+          <ul>
+            <li>Led the largest China trek in club history (~150 students, 4 cities, 9 days), managing a 6-person committee and securing 12 company visits and $40K in sponsorship</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <div>
+              <h3>Marketing Association of Columbia</h3>
+              <p class="role">VP</p>
+            </div>
+            <div class="when">New York, NY</div>
+          </div>
+          <ul>
+            <li>Rebuilt the club's flagship case competition, growing participation from 40 to 130 and recruiting 5 corporate sponsors to fund a $10K prize pool; grew active membership 60% YoY</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="additional" aria-labelledby="additional-h">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="additional-h">Additional Information</h2></div>
+      <div class="grid two">
+
+        <article class="card">
+          <h3>Skills</h3>
+          <ul class="chips">
+            <li>SQL</li><li>Tableau</li><li>Salesforce CRM</li><li>Excel (VBA)</li><li>Google Analytics</li>
+            <li>JIRA</li><li>Confluence</li><li>Lovable</li><li>GitHub</li><li>Cursor</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Languages</h3>
+          <ul class="chips">
+            <li>Cantonese (native)</li><li>Mandarin (conversational)</li><li>Japanese (basic)</li>
+          </ul>
+        </article>
+
+        <article class="card span">
+          <h3>Awards &amp; Interests</h3>
+          <dl class="kv">
+            <dt>Award</dt>
+            <dd>AmCham Hong Kong Future Leaders Program scholarship (2024)</dd>
+            <dt>Interests</dt>
+            <dd>Certified yoga instructor; competitive tennis (USTA California league, 2 seasons); sustainable skincare; 46+ countries visited</dd>
+          </dl>
+        </article>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Evelyn Yeung</span>
+    <span><a href="https://www.linkedin.com/in/evelyn1119/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/evelyny7" target="_blank" rel="noopener">GitHub</a> · <a href="#top">Back to top</a></span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // Highlight the nav link for the section currently in view.
+  var links = Array.prototype.slice.call(document.querySelectorAll('.links a'));
+  var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id); });
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sections.forEach(function (s) { if (s) io.observe(s); });
+  }
+</script>
+</body>
+</html>
