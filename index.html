@@ -45,7 +45,8 @@
   /* Hero */
   .hero{background:#fff;border-bottom:1px solid var(--line);padding:48px 0 36px}
   .hero .wrap{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
-  .photo{width:148px;height:148px;border-radius:50%;object-fit:cover;border:5px solid #fff;box-shadow:var(--shadow)}
+  .photo{width:148px;height:148px;border-radius:50%;overflow:hidden;border:5px solid #fff;box-shadow:var(--shadow);background:#fff}
+  .photo img{display:block;width:100%;height:100%;object-fit:cover;transform:translate(2%,13%) scale(1.4);transform-origin:48% 37%}
   .hero h1{margin:0 0 6px;font-size:clamp(28px,4vw,40px);line-height:1.15;color:var(--columbia-deep);letter-spacing:-.3px}
   .tagline{margin:0 0 14px;color:var(--columbia-dark);font-weight:600;font-size:17px}
   .summary{margin:0 0 18px;max-width:72ch}
@@ -136,7 +137,7 @@
 <main id="top">
   <section class="hero" aria-labelledby="name">
     <div class="wrap">
-      <img class="photo" src="headshot.png" alt="Portrait of Evelyn Yeung" width="148" height="148">
+      <div class="photo"><img src="headshot.png" alt="Portrait of Evelyn Yeung" width="148" height="148"></div>
       <div>
         <h1 id="name">Evelyn Yeung</h1>
         <p class="tagline">Strategy &amp; Operations · MBA (Strategy), Columbia Business School</p>
