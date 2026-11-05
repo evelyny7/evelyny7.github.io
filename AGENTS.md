@@ -18,7 +18,7 @@ Rules Evelyn wrote herself are listed first in each section and always win over 
 - Anything in `private/`: add it to `.gitignore` first, before any other work in that folder.
 - Phone numbers, home or street addresses, or any government ID details.
 - Reviewer comments, tracked changes, or draft annotations found in source documents (the current CV PDF contains margin comments; never copy them to the site and do not link the PDF while it still contains them).
-- Private email addresses. Only the professional email that already appears on the CV may be shown, and only as a plain mailto link.
+- Private email addresses, only as plain mailto links and only these two approved by Evelyn: the CV email EYeung27@gsb.columbia.edu and, added on 2026-11-05 because the school address expires at graduation, evelynyeung127@gmail.com. The Email button points to the Gmail address.
 - Credentials, API keys, tokens, analytics IDs, or anything found in environment variables or config files.
 - Files that happen to be in this folder but were not meant for the site (screenshots, notes, downloads) unless Evelyn says to use them.
 - Any content about third parties (colleagues, clients, classmates) beyond what the CV already states.
